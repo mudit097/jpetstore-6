@@ -16,14 +16,14 @@
       community.docker.docker_login:
         registry_url: https://index.docker.io/v1/
         username: mudit097
-        password:  dckr_pat_lbHGcdM_U18z5cSy8TYuXRC4nyc # Use Ansible Vault or environment variables
+        password: "dckr_pat_lbHGcdM_U18z5cSy8TYuXRC4nyc"
 
-    - name: Push image
+    - name: Push image to Docker Hub
       community.docker.docker_image:
         name: mudit097/petstore
         push: yes
 
-    - name: Run container
+    - name: Run Docker container
       community.docker.docker_container:
         name: pet1
         image: mudit097/petstore:latest
